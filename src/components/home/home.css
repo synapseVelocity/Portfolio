@@ -703,8 +703,7 @@
   
   #bottom-right-right {
     font-size: 11px;
-  }
-  
+
   .hire-btn {
     height: 30px;
     font-size: xx-small;
@@ -712,17 +711,23 @@
 }
 
 /* Smooth scrolling for better UX */
+
 html {
   scroll-behavior: smooth;
 }
 
 /* Add some hover effects for better interactivity */
-#left:hover, #top-right:hover, .contact:hover, #bottom-right-right:hover {
+
+#left:hover,
+#top-right:hover,
+.contact:hover,
+#bottom-right-right:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Ensure all transitions are smooth */
+}
 * {
   transition: all 0.3s ease;
-}
+};

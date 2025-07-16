@@ -357,14 +357,12 @@ header button:active {
   }
 }
 
-/* High DPI displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   header nav {
     box-shadow: 1px 1px 12px #3e82d2, 0 0 0 1px rgba(62, 130, 210, 0.1);
   }
 }
 
-/* Reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -373,18 +371,15 @@ header button:active {
   }
 }
 
-/* Dark mode support (if needed) */
 @media (prefers-color-scheme: dark) {
   /* Already dark by default, but can add specific adjustments here */
 }
 
-/* Print styles */
 @media print {
   header {
     position: static;
     box-shadow: none;
   }
-
   header nav {
     display: none;
   }

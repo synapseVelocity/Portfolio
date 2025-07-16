@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "./App.css";
 import Home from "../home/home.jsx";
@@ -7,64 +8,54 @@ import Hire from "../hire/hire.jsx";
 
 export default function App() {
   const [activeComponent, setActiveComponent] = useState("home");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Function to render the correct component based on activeComponent state
-  function rendering() {
+  const renderComponent = () => {
     switch (activeComponent) {
       case "home":
-        return <Home setActiveComponent={setActiveComponent} />; // Pass setActiveComponent to Home
+        return <Home setActiveComponent={setActiveComponent} />;
       case "project":
-        return <Project />; // Return the actual JSX component
+        return <Project />;
       case "about":
-        return <About />; // Placeholder
+        return <About />;
       case "hire":
-        return <Hire />; // Placeholder
+        return <Hire />;
       default:
-        return <Home setActiveComponent={setActiveComponent} />; // Fallback to Home component
+        return <Home setActiveComponent={setActiveComponent} />;
     }
-  }
-
-  // Function to handle navigation clicks
-  const handleNavClick = (component) => {
-    setActiveComponent(component);
   };
 
-
-  return(
+  return (
     <>
       <header>
         <p>&lt;Synapse Velocity /&gt;</p>
         <nav>
           <button
-            onClick={() => handleNavClick("home")}
-            className={`nav-btn ${activeComponent === "home" ? "active" : ""}`}
+            onClick={() => setActiveComponent("home")}
+            className={`nav-btn${activeComponent === "home" ? " active" : ""}`}
           >
             Home
           </button>
           <button
-            onClick={() => handleNavClick("project")}
-            className={`nav-btn ${
-              activeComponent === "project" ? "active" : ""
-            }`}
+            onClick={() => setActiveComponent("project")}
+            className={`nav-btn${activeComponent === "project" ? " active" : ""}`}
           >
             Projects
           </button>
           <button
-            onClick={() => handleNavClick("about")}
-            className={`nav-btn ${activeComponent === "about" ? "active" : ""}`}
+            onClick={() => setActiveComponent("about")}
+            className={`nav-btn${activeComponent === "about" ? " active" : ""}`}
           >
             About
           </button>
           <button
-            onClick={() => handleNavClick("hire")}
-            className={`nav-btn ${activeComponent === "hire" ? "active" : ""}`}
+            onClick={() => setActiveComponent("hire")}
+            className={`nav-btn${activeComponent === "hire" ? " active" : ""}`}
           >
             Hire
           </button>
         </nav>
       </header>
-      {rendering()}
+      {renderComponent()}
     </>
   );
 }

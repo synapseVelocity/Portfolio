@@ -12,12 +12,7 @@ export default function Home() {
         <section id="left">
           <img src={logo} alt="LOGO" />
           <p>
-            Our development services are the core of our velocity. We specialize
-            in full-stack, custom-built web applications that are designed for
-            performance,scalability,and results.From front-end finesse to
-            back-end muscle,our team harnesses the most powerful tools in the
-            industry—React,Next.js,Node.js,Django,Laravel,and more—to create
-            seamless digital experiences.
+            Our development services are the core of our velocity. We specialize in full-stack, custom-built web applications that are designed for performance, scalability, and results. From front-end finesse to back-end muscle, our team harnesses the most powerful tools in the industry—React, Next.js, Node.js, Django, Laravel, and more—to create seamless digital experiences.
           </p>
         </section>
         <section id="right">
@@ -27,11 +22,7 @@ export default function Home() {
               <img src={speed} alt="speed" />
             </div>
             <p className="description">
-              At Synapse Velocity, we don't just build websites—we engineer
-              digital powerhouses. Our mission is simple: dominate the web. With
-              cutting-edge design, lightning-fast performance, and
-              precision-engineered code, we don’t follow industry trends—we set
-              them.
+              At Synapse Velocity, we don't just build websites—we engineer digital powerhouses. Our mission is simple: dominate the web. With cutting-edge design, lightning-fast performance, and precision-engineered code, we don’t follow industry trends—we set them.
             </p>
           </div>
           <div id="bottom-right">
@@ -53,11 +44,7 @@ export default function Home() {
             </div>
             <div id="bottom-right-right">
               <p>Let your Business drink EZEM</p>
-              <button
-                className="hire-btn"
-              >
-                HIRE Team
-              </button>
+              <button className="hire-btn">HIRE Team</button>
             </div>
           </div>
         </section>

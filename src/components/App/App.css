@@ -1,0 +1,391 @@
+:root {
+  --primary-color: #060f19;
+}
+
+@font-face {
+  font-family: orbitron;
+  src: url(../../assets/font/Orbitron-Regular.ttf);
+  font-weight: normal;
+}
+
+* {
+  font-family: orbitron;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+html {
+  height: 100vh;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+#root{
+  height: 100%;
+  width: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  color: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+  animation: slideDown 0.8s ease-out;
+  position: relative;
+  z-index: 100;
+}
+
+header p {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-out;
+  cursor: pointer;
+}
+
+header p:hover {
+  color: #3e82d2;
+  transform: scale(1.02);
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100px;
+  width: 50%;
+  background-color: var(--primary-color);
+  border-radius: 60px;
+  box-shadow: 1px 1px 12px #3e82d2;
+  transition: all 0.3s ease;
+  animation: slideInNav 0.8s ease-out 0.3s both;
+}
+
+header nav:hover {
+  box-shadow: 2px 2px 15px #3e82d2;
+  transform: translateY(-2px);
+}
+
+header .nav-btn {
+  background-color: transparent;
+  border: none;
+  font-size: large;
+  cursor: pointer;
+  height: 68px;
+  width: 116px;
+  transition: all 0.5s ease;
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+}
+
+header .nav-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+header .nav-btn:hover:before {
+  left: 100%;
+}
+
+.nav-btn.active {
+  background-color: #3e82d2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(62, 130, 210, 0.4);
+}
+
+header button:hover {
+  background-color: #3e82d2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(62, 130, 210, 0.3);
+}
+
+header button:active {
+  transform: translateY(0);
+}
+
+/* Keyframe Animations */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInNav {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInMobile {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+  header {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+  }
+
+  header p {
+    font-size: 45px;
+  }
+
+  header nav {
+    height: 110px;
+    width: 45%;
+  }
+
+  header .nav-btn {
+    height: 75px;
+    width: 130px;
+    font-size: x-large;
+  }
+}
+
+/* Desktop (1024px to 1439px) */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  header p {
+    font-size: 38px;
+  }
+
+  header nav {
+    width: 55%;
+  }
+
+  header .nav-btn {
+    width: 110px;
+  }
+}
+
+/* Tablet Landscape (768px to 1023px) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    row-gap: 15px;
+  }
+
+  header p {
+    font-size: 32px;
+  }
+
+  header nav {
+    width: 95%;
+    height: 90px;
+  }
+
+  header .nav-btn {
+    height: 60px;
+    width: 100px;
+    font-size: medium;
+  }
+}
+
+/* Tablet Portrait (481px to 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+  header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  header p {
+    font-size: 28px;
+  }
+
+  header nav {
+    width: 65%;
+    height: 80px;
+  }
+
+  header .nav-btn {
+    height: 55px;
+    width: 85px;
+    font-size: small;
+  }
+}
+
+/* Mobile Landscape (375px to 480px) */
+@media (max-width: 480px) and (min-width: 375px) {
+  header {
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    row-gap: 7px;
+  }
+
+  header p {
+    font-size: 20px;
+  }
+
+  header nav {
+    width: 95%;
+    height: 60px;
+  }
+
+  header .nav-btn {
+    height: 40px;
+    width: 80px;
+    font-size: small;
+  }
+}
+
+/* Mobile Portrait (320px to 374px) */
+@media (max-width: 374px) {
+  header {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
+  }
+
+  header p {
+    font-size: 20px;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .mobile-nav-overlay .nav-btn {
+    width: 180px;
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  header {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  header p {
+    font-size: 18px;
+  }
+
+  .mobile-nav-overlay .nav-btn {
+    width: 160px;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    padding-top: 5px;
+  }
+
+  header p {
+    font-size: 22px;
+  }
+
+  .mobile-nav-overlay .nav-btn {
+    padding: 8px 20px;
+    margin: 5px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  header nav {
+    box-shadow: 1px 1px 12px #3e82d2, 0 0 0 1px rgba(62, 130, 210, 0.1);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+  /* Already dark by default, but can add specific adjustments here */
+}
+
+/* Print styles */
+@media print {
+  header {
+    position: static;
+    box-shadow: none;
+  }
+
+  header nav {
+    display: none;
+  }
+}

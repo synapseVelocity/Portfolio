@@ -313,7 +313,11 @@ header button:active {
     font-size: small;
   }
 }
-
+@media (max-width: 767px) and (min-width: 481px){
+  header nav{
+    width: 100%;
+  }
+}
 /* Mobile Portrait (320px to 374px) */
 @media (max-width: 374px) {
   header {

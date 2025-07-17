@@ -301,7 +301,7 @@
 }
 
 /* Desktop (1024px to 1439px) */
-@media (max-width: 1439px) and (min-width: 1024px) {
+@media (max-width: 1439px) and (min-width: 1025px) {
   .speed {
     font-size: 45px;
   }
@@ -314,199 +314,111 @@
     font-size: 24px;
   }
 }
-@media (max-width: 1025px) and (min-width: 820px) {
+@media (max-width: 1024px) and (min-width: 820px) {
   .content.active {
-    flex-direction: row;
-    height: calc(100% - 110px);
-    column-gap: 10px;
+    flex-direction: column;
+    row-gap: 10px;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 15px;
+    justify-content: flex-start;
   }
 
   #left {
-    flex-direction: column;
-    min-width: 40%;
-    height: 100%;
+    flex-direction: row;
+    order: 1;
+    min-width: 90%;
+    height: 50%;
     padding-left: 15px;
     padding-right: 15px;
     column-gap: 15px;
   }
-
   #left img {
-    height: 40%;
-    border-radius: 50%;
+    height: 90%;
     width: auto;
+    border-radius: 50%;
   }
-  #left p {
-    font-size: 16px;
-    width: 90%;
+    #left p {
+    font-size: 20px;
   }
   #right {
-  display: flex;
-  flex-direction: column;
-  margin: 0px;
-  padding: 0px;
-  gap: 0px;
-  height: 100%;
-  width: 60%;
-  color: black;
-  animation: slideInRight 0.8s ease-out;
-}
+    order: 2;
+    width: 90%;
+    height: 75%;
+    align-items: center;
+    justify-items: center;
+    row-gap: 10px;
+  }
+  #top-right {
+    order: 1;
+    height: 90%;
+    width: 100%;
+    border-radius: 30px;
+  }
+  .speed {
+    font-size: 35px;
+  }
 
-#top-right {
-  background-color: #ffffff;
-  height: 60%;
-  width: 100%;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  color: black;
-  padding-left: 15px;
-  padding-right: 15px;
-  transition: all 0.3s ease;
-  animation: slideInTop 0.8s ease-out 0.2s both;
-}
+  .speed img {
+    width: 15%;
+  }
 
-.speed {
-  display: flex;
-  flex-direction: row;
-  column-gap: -10px;
-  align-items: center;
-  justify-content: center;
-  padding: 0px;
-  margin: 0px;
-  color: black;
-  font-size: 40px;
-  transition: all 0.3s ease;
-}
+  .description {
+    font-size: 25px;
+    bottom: 20px;
+  }
 
-.speed img {
-  width: 20%;
-  height: auto;
-  position: relative;
-  z-index: 1;
-  right: 15px;
-  transition: transform 0.3s ease;
-  animation: pulse 2s infinite;
-}
 
-.speed:hover img {
-  transform: rotate(360deg);
-}
-
-.description {
-  position: relative;
-  bottom: 25px;
-  font-size: 22px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-#bottom-right {
-  display: flex;
-  flex-direction: row;
-  height: 40%;
-  width: 100%;
-  animation: slideInBottom 0.8s ease-out 0.4s both;
-}
-
-#bottom-right-left {
-  width: 70%;
-  border-top-right-radius: 30px;
-  transition: all 0.3s ease;
-}
-
-#bottom-right-right {
-  background-color: #ffffff;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  text-align: center;
-  color: black;
-  font-weight: bold;
-  padding-left: 15px;
-  padding-right: 15px;
-  transition: all 0.3s ease;
-}
-
-.hire-btn {
-  background-color: var(--primary-color);
-  border: none;
-  font-size: large;
-  cursor: pointer;
-  height: 68px;
-  width: 80%;
-  height: 60px;
-  transition: all 0.5s ease;
-  border-radius: 30px;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  transform: translateY(0);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.hire-btn:hover {
-  background-color: #3e82d2;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.hire-btn:active {
-  transform: translateY(0);
-}
-
-#bottom-right-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  height: calc(100% - 30px);
-  width: calc(100% - 30px);
-  border-radius: 30px 0px 30px 30px;
-  background-color: #ffffff;
-  font-weight: bolder;
-  font-size: x-large;
-  transition: all 0.3s ease;
-}
-
-#bottom-right-left .platforms {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 70%;
-  height: auto;
-}
-
-#bottom-right-left a {
-  border: none;
-  background: transparent;
-  transition: transform 0.3s ease;
-}
-
-#bottom-right-left a:hover {
-  transform: scale(1.1);
-}
-
-#bottom-right-left a img {
-  height: 100%;
-  width: 100%;
-  transition: all 0.3s ease;
-}
+  #bottom-right {
+    order: 2;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    row-gap: 10px;
+  }
+  #bottom-right-right {
+    order: 1;
+    font-size: 20px;
+    width: 100%;
+    min-height: 120px;
+    border-radius: 30px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  #bottom-right-left {
+    order: 2;
+    font-size: 20px;
+    width: 100%;
+    min-height: 120px;
+    padding: none;
+  }
+  .hire-btn {
+    min-height:80%;
+    width: 40%;
+  }
+  .contact {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    margin: 0px;
+    flex-direction: row;
+  }
+  .platforms {
+    max-width: 250px;
+    height: 100%;
+  }
+  .platforms a {
+    height: 60px;
+    width: 60px;
+  }
+  .platforms img {
+    width: 60px;
+    height: 60px;
+  }
+  .hire-btn {
+    height: 50px;
+    font-size: medium;
+  }
 }
 /* Tablet Landscape (768px to 1023px) */
 @media (max-width: 768px) {
@@ -560,7 +472,7 @@
   }
 
   #left p {
-    font-size: 13px;
+    font-size: 18px;
   }
   #bottom-right {
     order: 2;
@@ -620,6 +532,7 @@
   .content.active {
     flex-direction: column;
     padding: 10px;
+    padding-bottom: 10px;
     height: calc(100% - 80px);
     gap: 15px;
   }
@@ -634,6 +547,8 @@
   #left img {
     width: 40%;
     margin-right: 15px;
+    height: auto;
+    border-radius: 50%;
   }
 
   #left p {
@@ -660,18 +575,22 @@
     font-size: 16px;
     bottom: 15px;
   }
-
+  #bottom-right{
+    padding-bottom: 10px;
+  }
   #bottom-right-left {
-    width: 65%;
+    width: 100%;
   }
 
   #bottom-right-right {
-    width: 35%;
+    width: 100%;
     font-size: 16px;
   }
 
   .contact {
     font-size: large;
+    width: 100%;
+    height: 100%;
   }
 
   .hire-btn {

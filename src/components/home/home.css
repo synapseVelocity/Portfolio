@@ -314,7 +314,7 @@
     font-size: 24px;
   }
 }
-@media (max-width: 1024px) and (min-width: 820px) {
+@media (max-width: 1025px) and (min-width: 820px) {
   .content.active {
     flex-direction: row;
     height: calc(100% - 110px);
